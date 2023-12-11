@@ -1,11 +1,13 @@
 TEMPLATE = app
-QT += quick
+QT += quick testlib
 CONFIG += c++14
 
 SOURCES += main.cpp \
-           simpleClass.cpp
+           simpleClass.cpp \
+           test_simpleClass.cpp
 
-HEADERS += simpleClass.h
+HEADERS += simpleClass.h \
+           test_simpleClass.h
 
 RESOURCES += qml.qrc
 
