@@ -3,12 +3,12 @@ import QtQuick.Controls 2.0
 
 ApplicationWindow {
     visible: true
-    width: 640
-    height: 480
+    width: 320
+    height: 240
     title: qsTr("Hello World")
 
     Text {
-        text: qsTr("Hello, world!")
+        text: qsTr("The world's most simple QML view.")
         anchors.centerIn: parent
     }
 }
