@@ -2,7 +2,10 @@ TEMPLATE = app
 QT += quick
 CONFIG += c++14
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+           simpleClass.cpp
+
+HEADERS += simpleClass.h
 
 RESOURCES += qml.qrc
 
