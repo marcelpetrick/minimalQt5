@@ -16,13 +16,13 @@ CONFIG(test, test|release) {
     message("Building the test suite...")
     QT += testlib
     DEFINES += QT_TESTLIB_LIB
-    SOURCES = simpleClass.cpp \  # Include simpleClass.cpp for test build
+    SOURCES = simpleClass.cpp \
              test_simpleClass.cpp
-    HEADERS = simpleClass.h  # Include simpleClass.h for test build
+    HEADERS = simpleClass.h
     TARGET = test_project
 } else {
     message("Building the main application...")
     SOURCES = $$MAIN_SOURCES
     HEADERS = $$MAIN_HEADERS
-    TARGET = your_main_project
+    TARGET = project
 }

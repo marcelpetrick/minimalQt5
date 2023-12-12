@@ -3,7 +3,7 @@ Minimal Qt5-based project: using QML for the view and qmake as buildsystem
 
 ## build
 * main:  `qmake && make && ./project`
-* to build the test suite, run `qmake "CONFIG+=test" && make`
+* to build the test suite, run `qmake "CONFIG+=test" && make && ./test_project`
 
 ## test output
 ```bash
