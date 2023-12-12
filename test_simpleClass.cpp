@@ -1,12 +1,20 @@
-#include "test_simpleClass.h"
+#include <QtTest/QtTest>
 #include "simpleClass.h"
 
-void Test_SimpleClass::testSayHello()
+class TestSimpleClass : public QObject
+{
+    Q_OBJECT
+
+private slots:
+    void testSayHello();
+};
+
+void TestSimpleClass::testSayHello()
 {
     SimpleClass simple;
     QString result = simple.sayHello();
     QCOMPARE(result, QString("Hello from SimpleClass!"));
 }
 
-QTEST_MAIN(Test_SimpleClass)
+QTEST_MAIN(TestSimpleClass)
 #include "test_simpleClass.moc"

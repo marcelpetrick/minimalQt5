@@ -1,14 +1,28 @@
 TEMPLATE = app
-QT += quick testlib
+
+QT += quick
 CONFIG += c++14
 
-SOURCES += main.cpp \
-           simpleClass.cpp \
-           test_simpleClass.cpp
+# Define main application sources and headers
+MAIN_SOURCES = main.cpp \
+               simpleClass.cpp
 
-HEADERS += simpleClass.h \
-           test_simpleClass.h
+MAIN_HEADERS = simpleClass.h
 
 RESOURCES += qml.qrc
 
-QML_IMPORT_PATH =
+# Test configuration
+CONFIG(test, test|release) {
+    message("Building the test suite...")
+    QT += testlib
+    DEFINES += QT_TESTLIB_LIB
+    SOURCES = simpleClass.cpp \  # Include simpleClass.cpp for test build
+             test_simpleClass.cpp
+    HEADERS = simpleClass.h  # Include simpleClass.h for test build
+    TARGET = test_project
+} else {
+    message("Building the main application...")
+    SOURCES = $$MAIN_SOURCES
+    HEADERS = $$MAIN_HEADERS
+    TARGET = your_main_project
+}
